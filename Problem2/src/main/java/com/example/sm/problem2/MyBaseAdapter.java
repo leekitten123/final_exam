@@ -17,7 +17,7 @@ public class MyBaseAdapter extends BaseAdapter implements AdapterView.OnItemClic
     LayoutInflater mLayoutInflater = null;
     public int selected_position;
 
-    MyBaseAdapter(  Context context, ArrayList<Employee> data){
+    MyBaseAdapter(Context context, ArrayList<Employee> data){
         mContext = context;
         mData = data;
         mLayoutInflater = LayoutInflater.from(mContext);
@@ -66,6 +66,7 @@ public class MyBaseAdapter extends BaseAdapter implements AdapterView.OnItemClic
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // need something here
+
+        return convertView ;
     }
 }

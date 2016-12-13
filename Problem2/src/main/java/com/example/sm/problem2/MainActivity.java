@@ -1,6 +1,7 @@
 package com.example.sm.problem2;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -11,13 +12,17 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     MyBaseAdapter adapter;
     ListView listview;
+
+    ArrayList<Employee> emp_list = new ArrayList<>() ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // need something here
 
+        //emp_list.add(new Employee("이상욱", 23, 10000)) ;
+        // need something here
         adapter = new MyBaseAdapter(this, emp_list);
         listview = (ListView) findViewById(R.id.listView1) ;
         listview.setAdapter(adapter);
@@ -42,6 +47,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn_store:
                 // need something here
+                employee = new Employee(edit_name.getText().toString(), Integer.parseInt(edit_age.getText().toString()), Integer.parseInt(edit_salary.getText().toString())) ;
+                emp_list.add(employee);
+                adapter.add(employee);
+                Log.e("Yes", "Yes") ;
+                //listview.addView(adapter.getView(1, null, ));
                 break;
 
             case R.id.btn_modify:

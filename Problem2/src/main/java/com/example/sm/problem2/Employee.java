@@ -20,4 +20,11 @@ public class Employee extends Person implements Payment{
     }
 
     // need something here
+    public void increase() {
+        setSalary(salary + 10000);
+    }
+
+    public void decrease() {
+        setSalary(salary - 10000);
+    }
 }
